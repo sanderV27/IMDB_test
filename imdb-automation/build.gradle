@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Selenide for browser automation
+    implementation 'com.codeborne:selenide:6.0.1'
+
+    // Selenium for WebDriver support
+    implementation 'org.seleniumhq.selenium:selenium-java:4.10.0'
+
+    // TestNG for testing framework
+    testImplementation 'org.testng:testng:7.7.1'
+
+    // Allure for reporting
+    implementation 'io.qameta.allure:allure-testng:2.19.0'
+
+    // WebDriver Manager for browser drivers
+    implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+}
+
+test {
+    useTestNG()
+    systemProperty 'selenide.browser', 'chrome'
+    systemProperty 'chromeoptions.args', '--remote-allow-origins=*'
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+application {
+    mainClass = 'tests.ImdbTest'
+}

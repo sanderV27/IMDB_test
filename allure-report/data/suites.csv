@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Automated test to fetch 5 celebrities born today from IMDb website","16345","Search for IMDb on Google and fetch celebrities born today","Gradle suite","Mon Nov 11 11:07:29 EET 2024","passed","Mon Nov 11 11:07:45 EET 2024","tests.ImdbTest","Gradle test","tests.ImdbTest","testImdbBornToday"
